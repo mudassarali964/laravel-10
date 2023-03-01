@@ -40,12 +40,14 @@ At its heart, Sail is the docker-compose.yml file and the sail script that is st
     - If successfully configured then run the following commands to start the docker
         - sail build --no-cache
         - sail up -d
+        - sail artisan key:generate
         - sail artisan migrate:fresh --seed
     - If error in configuration then move to the next step (without alias)
 
 - 6- If any case step "5" get failed, then do the following steps: (without alias setup)
     - ./vendor/bin/sail build --no-cache
     - ./vendor/bin/sail up -d
+    - ./vendor/bin/sail artisan key:generate
     - ./vendor/bin/sail artisan migrate:fresh --seed
 
 ## Run the project in the docker via sail (For alias configuration)
