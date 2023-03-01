@@ -17,12 +17,12 @@ At its heart, Sail is the docker-compose.yml file and the sail script that is st
 
 - 1- Create new file as .env in the root directory, copy .env.example file code into .env file and replace the Database setting as:
     
-    DB_CONNECTION=mysql
-    DB_HOST=mysql
-    DB_PORT=3306
-    DB_DATABASE=laravel_cashier
-    DB_USERNAME=root
-    DB_PASSWORD=
+    - DB_CONNECTION=mysql
+    - DB_HOST=mysql
+    - DB_PORT=3306
+    - DB_DATABASE=laravel_cashier
+    - DB_USERNAME=root
+    - DB_PASSWORD=
 
 - 2- Make sure Docker Desktop is running on your machine.
 - 3- Add your project into docker FILE SHARING: Go to docker setting -> Resources -> FILE SHARING -> Add your project path 
@@ -52,12 +52,14 @@ At its heart, Sail is the docker-compose.yml file and the sail script that is st
 
 - sail build --no-cache
 - sail up -d
+- sail artisan key:generate
 - sail artisan migrate:fresh --seed
 
 ## Run the project in the docker via sail (For without alias configuration)
 
 - ./vendor/bin/sail build --no-cache
 - ./vendor/bin/sail up -d
+- ./vendor/bin/sail artisan key:generate
 - ./vendor/bin/sail artisan migrate:fresh --seed
 
 ## Stop the project in the docker via sail (For alias configuration)
