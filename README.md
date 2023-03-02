@@ -50,33 +50,31 @@ At its heart, Sail is the docker-compose.yml file and the sail script that is st
     - ./vendor/bin/sail artisan key:generate
     - ./vendor/bin/sail artisan migrate:fresh --seed
 
-## Run the project in the docker via sail (For alias configuration)
+## Run the project in the docker via sail (Alias Configuration)
 
 - sail build --no-cache
 - sail up -d
 - sail artisan key:generate
 - sail artisan migrate:fresh --seed
 
-## Run the project in the docker via sail (For without alias configuration)
+## Run the project in the docker via sail (No Alias Configuration)
 
 - ./vendor/bin/sail build --no-cache
 - ./vendor/bin/sail up -d
 - ./vendor/bin/sail artisan key:generate
 - ./vendor/bin/sail artisan migrate:fresh --seed
 
-## Stop the project in the docker via sail (For alias configuration)
+## Stop the project in the docker via sail (Alias Configuration)
 
 - sail stop
 - sail down
 
-## Stop the project in the docker via sail (For without alias configuration)
+## Stop the project in the docker via sail (No Alias Configuration)
 
 - ./vendor/bin/sail stop
 - ./vendor/bin/sail down
 
-====================================================
-## Only for update the database credentials from env 
-====================================================
+## Only for update the database credentials from env
 
 - If we need to change the database credentials from .env file, then we should follow the given steps:
 
@@ -88,9 +86,8 @@ At its heart, Sail is the docker-compose.yml file and the sail script that is st
 - 2- Manually removed all the images related to the container
 - 3- Then change the database credentials in the .env file
 - 3- Finally Run these commands:
-	- sail build --no-cache
-	- sail up -d
-
-====================================================
+	- sail build --no-cache OR ./vendor/bin/sail --no-cache
+	- sail up -d OR ./vendor/bin/sail up -d
+	
 
 
